@@ -16,7 +16,7 @@ tabs:
   archives: Archives
   about: About
   shop: Merch
-  sponsor: Sponsor
+#  sponsor: Sponsor
 
 # the text displayed in the search bar & search results
 search:
