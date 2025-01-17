@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ansible vs Python for Network Automation: Which One Should You Choose?"
-date: 2021-12-15
+date: 2021-12-06
 categories: [Automation]
 tags: [automation, python, ansible]
 description: Ansible vs Python
