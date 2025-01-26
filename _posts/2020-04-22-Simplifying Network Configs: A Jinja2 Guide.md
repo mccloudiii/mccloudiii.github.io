@@ -257,17 +257,17 @@ You can define your variables in a YAML file, as shown below:
 # vars.yaml
 ---
 interfaces:
-  - name: Eth11
+  - name: Eth01
     p2p: 10.10.10.1/30
-    description: TRANSIT-LINK
+    description: UPLINK_TO_CORE
 
-  - name: Eth12
+  - name: Eth02
     p2p: 10.10.20.1/30
-    description: CUSTOMER-A
+    description: TO_ACCESS
 
-  - name: Eth13
+  - name: Eth03
     p2p: 10.10.30.1/30
-    description: OUTSIDE
+    description: INTERNET
 ```
 
 ### Python Script to Render Template  
