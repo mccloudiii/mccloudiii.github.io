@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ansible vs Python for Network Automation: Which One Should You Choose?"
-date: 2021-12-06
+date: 2020-03-15
 categories: [Automation]
 tags: [automation, python, ansible]
 description: Ansible vs Python
@@ -10,9 +10,6 @@ image:
 ---
 
 
-<!-- ![Paramiko](/assets_2/PARAMIKO.png){: .shadow } -->
-
-<!-- <span style="font-family: 'Roboto', sans-serif;">This text will use the Roboto font.</span> -->
 # Ansible vs Python for Network Automation: Which One Should You Choose?
 
 Network automation is becoming an essential practice for modern IT operations. As networks grow in complexity, automating tasks ensures efficiency, consistency, and scalability. Among the popular tools for network automation, Ansible and Python often come up in discussions. This post will explore the strengths and differences of both, helping you decide which is better suited for your needs.
