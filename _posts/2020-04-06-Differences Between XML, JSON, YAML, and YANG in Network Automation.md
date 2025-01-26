@@ -9,8 +9,8 @@ image:
  path: /assets_2/
 ---
 
-Understanding the Differences Between XML, JSON, YAML, and YANG in Network Automation
--------------------------------------------------------------------------------------
+## Understanding the Differences Between XML, JSON, YAML, and YANG in Network Automation
+
 
 As network automation evolves, so does the need for efficient and standardized ways to represent and manipulate data. XML, JSON, YAML, and YANG are common data formats used in network automation, each with distinct advantages depending on the use case. In this post, we will explore these formats, how they differ from each other, and their roles in network automation, particularly in relation to RESTCONF and NETCONF.
 
