@@ -37,9 +37,9 @@ The versions used in this tutorial are:
 Jinja2 templates utilize specific delimiters to define operations executed by the templating engine:
 
 ```jinja
-- `{{ ... }}` for variables and expressions  
-- `{% ... %}` for statements like `for`, `if`, and `include`  
-- `{# ... #}` for comments  
+- '{{ ... }}' for variables and expressions  
+- '{% ... %}' for statements like `for`, `if`, and `include`  
+- '{# ... #}' for comments  
 ```
 # Variables  
 In Jinja2, variables are represented with the `{{ some_variable }}` format.
