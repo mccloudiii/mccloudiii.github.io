@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Automating Network Device Commands Execution with Paramiko and Concurrent.futures Module in Python"
-date: 2021-08-15
+date: 2019-08-15
 categories: [Automation]
 tags: [ssh, automation, paramiko, python]
 description: Use concurrent futures module to create multiple SSH sessions using Paramiko

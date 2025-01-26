@@ -6,7 +6,7 @@ categories: [Automation]
 tags: [automation, XML, JSON , YANG, RESTCONF, NETCONF ]
 description: XML, JSON, YAML, and YANG in Network Automation
 image:
- path: /assets_2/
+ path: /assets_2/xml-json-yaml-yang-netconf-restconf.png
 ---
 
 ## Understanding the Differences Between XML, JSON, YAML, and YANG in Network Automation
@@ -14,12 +14,12 @@ image:
 
 As network automation evolves, so does the need for efficient and standardized ways to represent and manipulate data. XML, JSON, YAML, and YANG are common data formats used in network automation, each with distinct advantages depending on the use case. In this post, we will explore these formats, how they differ from each other, and their roles in network automation, particularly in relation to RESTCONF and NETCONF.
 
-### 1\. **XML (Extensible Markup Language)**
+### **XML (Extensible Markup Language)**
 
 XML has long been a staple in network automation and other IT domains due to its structured format. It is a markup language that allows you to define the structure and store data in a hierarchical, tree-like format.
 
 | **Feature** | **Details** |
-| --- | --- |
+| :---: | :---: | :---: 
 | **Structure** | Hierarchical, tree-like |
 | **Format** | Markup Language (Tags, Attributes) |
 | **Readability** | Human-readable but verbose |
@@ -31,11 +31,9 @@ XML has long been a staple in network automation and other IT domains due to its
 
 In NETCONF, the configuration for an interface might look like this in XML:
 
-xml
 
-CopiarEditar
-
-`<config>
+```xml
+<config>
     <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
         <interface>
             <name>GigabitEthernet0/1</name>
@@ -49,16 +47,17 @@ CopiarEditar
             </ipv4>
         </interface>
     </interfaces>
-</config>`
+</config>
+```
 
 * * * * *
 
-### 2\. **JSON (JavaScript Object Notation)**
+### **JSON (JavaScript Object Notation)**
 
 JSON is a lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate. It is more compact than XML and has become the preferred format in many modern web applications.
 
 | **Feature** | **Details** |
-| --- | --- |
+| :---: | :---: | :---: 
 | **Structure** | Key-value pairs, simple |
 | **Format** | Text-based, minimal syntax |
 | **Readability** | Easy for humans to read, more compact than XML |
@@ -70,11 +69,8 @@ JSON is a lightweight data-interchange format that is easy for humans to read an
 
 In RESTCONF, a JSON configuration for an interface might look like this:
 
-json
-
-CopiarEditar
-
-`{
+```json
+{
     "ietf-interfaces:interface": {
         "name": "GigabitEthernet0/1",
         "description": "Uplink Interface",
@@ -88,16 +84,16 @@ CopiarEditar
             ]
         }
     }
-}`
-
+}
+```
 * * * * *
 
-### 3\. **YAML (YAML Ain't Markup Language)**
+### **YAML (YAML Ain't Markup Language)**
 
 YAML is a human-readable data format that emphasizes simplicity and readability. It is often used in configuration files for software applications, including network automation tools.
 
 | **Feature** | **Details** |
-| --- | --- |
+| :---: | :---: | :---: 
 | **Structure** | Indentation-based, easy to read |
 | **Format** | Human-readable, supports complex data structures |
 | **Readability** | Extremely easy for humans to read and write |
@@ -109,11 +105,9 @@ YAML is a human-readable data format that emphasizes simplicity and readability.
 
 Ansible playbook for configuring an interface might look like this in YAML:
 
-yaml
+```yml
 
-CopiarEditar
-
-`- name: Configure GigabitEthernet0/1 interface
+- name: Configure GigabitEthernet0/1 interface
   hosts: network_devices
   tasks:
     - name: Set interface description
@@ -123,16 +117,16 @@ CopiarEditar
         enabled: true
         ipv4:
           address: "192.168.1.1"
-          netmask: "255.255.255.0"`
-
+          netmask: "255.255.255.0"
+```
 * * * * *
 
-### 4\. **YANG (Yet Another Next Generation)**
+### **YANG (Yet Another Next Generation)**
 
 YANG is a data modeling language used to define the structure of data that is exchanged between network devices and management systems. YANG models are crucial for defining device configurations and state data in a consistent, machine-readable manner.
 
 | **Feature** | **Details** |
-| --- | --- |
+| :---: | :---: | :---: 
 | **Structure** | Schema-based data modeling language |
 | **Format** | Not a data format; needs translation to XML/JSON |
 | **Readability** | Machine-readable models |
@@ -144,11 +138,10 @@ YANG is a data modeling language used to define the structure of data that is ex
 
 A YANG model to define the structure of an interface configuration might look like this:
 
-yang
+```yang
 
-CopiarEditar
 
-`module example-interface {
+module example-interface {
   namespace "urn:example:interface";
   prefix "ei";
 
@@ -171,20 +164,36 @@ CopiarEditar
       }
     }
   }
-}`
+}
+```
+
 
 The YANG model defines a structure that can then be translated into XML or JSON for communication between the network device and management systems using NETCONF or RESTCONF.
 
 * * * * *
 
-### **Summary Table: Comparison of XML, JSON, YAML, and YANG**
+### **Summary Tables: Comparison of XML, JSON, YAML, and YANG**
 
-| **Data Format** | **Structure** | **Use Cases** | **Pros** | **Cons** | **Example Protocols** |
-| --- | --- | --- | --- | --- | --- |
-| **XML** | Hierarchical, tree-like | NETCONF, Data Interchange | Flexible, supports complex structures | Verbose, large data sizes | NETCONF |
-| **JSON** | Key-value pairs | RESTCONF, APIs | Compact, widely adopted, fast parsing | Limited support for complex data | RESTCONF |
-| **YAML** | Indentation-based | Configuration files | Human-readable, simple syntax | Prone to indentation errors | Ansible, Network Automation |
-| **YANG** | Data modeling language | Device Configuration | Standardized, flexible for device data | Requires translation to XML/JSON | NETCONF, RESTCONF |
+| **Data Format** | **Structure** | **Use Cases** |
+| :---: | :---: | :---: 
+| **XML** |   Hierarchical, tree-like | NETCONF, Data Interchange 
+| **JSON** | Key-value pairs | RESTCONF, APIs 
+| **YAML** | Indentation-based | Configuration files 
+| **YANG** | Data modeling language | Device Configuration 
+
+| **Data Format**| **Pros** | **Cons**
+| :---: | :---: | :---: 
+| **XML** | Flexible, supports complex structures | Verbose, large data sizes
+| **JSON** | Compact, widely adopted, fast parsing | Limited support for complex data
+| **YAML**| Human-readable, simple syntax | Prone to indentation errors
+| **YANG** | Standardized, flexible for device data | Requires translation to XML/JSON
+
+| **Data Format**| **Example Protocols** |
+| :---: | :---: | :---: 
+| **XML**|  NETCONF |
+| **JSON**| RESTCONF |
+| **YAML**| Ansible, Network Automation Frameworks |
+| **YANG**  | NETCONF, RESTCONF |
 
 * * * * *
 

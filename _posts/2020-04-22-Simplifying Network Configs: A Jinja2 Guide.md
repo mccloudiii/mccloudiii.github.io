@@ -8,13 +8,13 @@ description: Simplifying Network Configs A Jinja2 Guide
 image:
  path: /assets_2/jinja2.png
 ---
-
-# Introduction  
+{% raw %}
+## Introduction  
 Jinja2 is a Python-based templating language that is inspired by the Django templating system. It's widely used across various projects as a templating engine, with some well-known examples including Ansible, Salt, and Flask.  
 
 The goal of Jinja2 is to integrate common Python functionalities directly into the templating engine, enabling the dynamic creation of static content.
 
-# Installation  
+## Installation  
 Jinja2 is available on PyPi, which means it can be installed easily via pip. For managing Python projects, I recommend using virtual environments.  
 
 ```bash
@@ -30,25 +30,24 @@ pip install jinja2
 
 The versions used in this tutorial are:
 
-- Jinja2: 2.9.6  
-- Python: 3.6.1  
+- Jinja2: 2.11.2  
+- Python: 3.10  
 
-# Delimiters  
+## Delimiters  
 Jinja2 templates utilize specific delimiters to define operations executed by the templating engine:
 
-```jinja
-- "{{ ... }}" for variables and expressions  
-- "{% ... %}" for statements like `for`, `if`, and `include`  
-- "{# ... #}" for comments  
-```
-# Variables  
+- `{{ ... }}` for variables and expressions  
+- `{% ... %}` for statements like `for`, `if`, and `include`  
+- `{# ... #}` for comments  
+
+## Variables  
 In Jinja2, variables are represented with the `{{ some_variable }}` format.
 
 ```jinja
 {{ some_variable }}
 ```
 
-# Looping  
+## Looping  
 A `for` loop allows you to repeat blocks of text, reducing the need for manual copying and pasting.
 
 ```jinja
@@ -59,7 +58,7 @@ A `for` loop allows you to repeat blocks of text, reducing the need for manual c
 ```
 Note: `for` loops must always be properly closed with `{% endfor %}`.
 
-# Conditionals  
+## Conditionals  
 Conditionals enable rendering content based on whether a specific condition evaluates to `True` or `False`.
 
 ```jinja
@@ -74,7 +73,7 @@ Conditionals enable rendering content based on whether a specific condition eval
 ```
 Like loops, `if` statements require an `{% endif %}` to close them.
 
-# Usage  
+## Usage  
 Working with Jinja2 generally involves three main steps:
 
 1. Define variables  
@@ -105,7 +104,8 @@ interface {{ interface.name }}
 '''
 ```
 
-Note: The `.` syntax in Jinja2 is used to access dictionary keys. For example, `interface.name` accesses the `name` key in the `interface` dictionary. Alternatively, you can use Python-style dictionary access: `interface['name']`.  
+> Note: The `.` syntax in Jinja2 is used to access dictionary keys. For example, `interface.name` accesses the `name` key in the `interface` dictionary. Alternatively, you can use Python-style dictionary access: `interface['name']`.  
+{: .prompt-tip }
 
 Rendering the template with the `interface` data:
 
@@ -170,8 +170,8 @@ interface gigabitethernet0/1
  no shutdown
 !
 ```
-
-Now, imagine you want to switch to a Juniper router. This demonstrates the true power of templating: easily adapting configurations to different devices.
+> Now, imagine you want to switch to a Juniper router. This demonstrates the true power of templating: easily adapting configurations to different devices.
+{: .prompt-tip }
 
 ```python
 # Juniper interface template
@@ -194,10 +194,10 @@ For this example, change the interface names and IP address formats.
 
 ```python
 interfaces = [
-    {'description': 'Uplink to WAN',
+    {'description': 'Uplink to Core',
      'ip_address': '10.10.10.1/24',
      'name': 'ge-0/0/0'},
-    {'description': 'Crosslink to R2',
+    {'description': 'B2B link to R2',
      'ip_address': '10.10.20.1/24',
      'name': 'ge-0/0/1'}
 ]
@@ -212,7 +212,7 @@ template.render(interfaces=interfaces)
 # Output
 interfaces {
     ge-0/0/0 {
-    description Uplink to WAN ;
+    description Uplink to Core ;
     unit 0 {
         family inet {
             address 10.10.10.1/24 ;
@@ -220,7 +220,7 @@ interfaces {
         }
     }
     ge-0/0/1 {
-    description Crosslink to R2 ;
+    description B2B link to R2 ;
     unit 0 {
         family inet {
             address 10.10.20.1/24 ;
@@ -230,15 +230,16 @@ interfaces {
 }
 ```
 
-# Conclusion  
+## Conclusion  
 Jinja2 is an excellent tool for creating reusable configuration templates. While this guide only scratches the surface, Jinja2 provides many other features that make it highly suitable for managing device configurations.
 
-# Additional Example with Python and YAML Integration  
+## Example with Python and YAML Integration
 
 If you'd like to integrate Jinja2 with other Python-based tools for network automation, you can render the template with Python directly. This approach is similar to Ansible but uses Python to load the template and variable data.
 
 Here's an example template in Jinja2:
 
+### Jinja Template  
 ```jinja
 # template.j2
 {% for interface in interfaces %}
@@ -292,5 +293,6 @@ config = template.render(data)
 with open('config.txt', 'w') as fw:
     fw.write(config)
 ```
+{% endraw %}
 
 This script loads the `vars.yaml` file, renders the `template.j2`, and writes the result to `config.txt`.
