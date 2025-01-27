@@ -19,47 +19,67 @@ Network automation is becoming an essential practice for modern IT operations. A
 ### What is Ansible?
 
 Ansible is an open-source automation tool that uses a simple, declarative language called YAML. It allows you to automate network configurations, deployments, and other administrative tasks without the need for complex scripting.
+### Key Features of Ansible
 
-### Key Features
+| Feature         | Description                                                                                       |
+|-----------------|---------------------------------------------------------------------------------------------------|
+| Agentless       | Ansible doesn’t require any agent software on <br>the devices it manages. This reduces overhead and simplifies the setup. |
+| Playbooks       | Tasks are defined in playbooks, which are easy-to-read YAML files.                                |
+| Idempotency     | Ansible ensures that tasks are applied consistently without causing <br>unintended changes, even if run multiple times. |
+| Broad Support   | Ansible supports a wide range of devices and platforms, including Cisco, Juniper,<br> Arista, and more. |
 
-- **Agentless**: Ansible doesn't require any agent software on the devices it manages. This reduces overhead and simplifies the setup.
-- **Playbooks**: Tasks are defined in playbooks, which are easy-to-read YAML files.
-- **Idempotency**: Ansible ensures that tasks are applied consistently without causing unintended changes, even if run multiple times.
-- **Broad Support**: Ansible supports a wide range of devices and platforms, including Cisco, Juniper, Arista, and more.
+---
 
 ### Pros of Using Ansible
 
-- **Ease of Use**: Ansible's YAML syntax is user-friendly, making it accessible even to those with limited programming experience.
-- **Scalability**: You can manage thousands of devices using Ansible, making it ideal for large networks.
-- **Community Support**: Ansible has a large community, and many pre-built modules and playbooks are readily available.
+| Pros             | Description                                                                                       |
+|------------------|---------------------------------------------------------------------------------------------------|
+| Ease of Use      | Ansible’s YAML syntax is user-friendly, <br>making it accessible even to those with limited programming experience. |
+| Scalability      | You can manage thousands of devices using Ansible,<br> making it ideal for large networks.            |
+| Community Support| Ansible has a large community, and many pre-built <br>modules and playbooks are readily available.    |
+
+---
 
 ### Cons of Using Ansible
 
-- **Less Flexibility**: While Ansible is great for predefined tasks, it may lack the flexibility required for more complex, custom automation.
-- **Learning Curve for Advanced Features**: Although basic tasks are easy, mastering advanced features and custom modules can take time.
+| Cons                          | Description                                                                                       |
+|-------------------------------|---------------------------------------------------------------------------------------------------|
+| Less Flexibility              | While Ansible is great for predefined tasks,<br> it may lack the flexibility required for more complex, custom automation. |
+| Learning Curve for Advanced Features | Although basic tasks are easy,<br> mastering advanced features and custom modules can take time.      |
+
 
 ## Python for Network Automation
 
 ### What is Python?
 
 Python is a powerful, general-purpose programming language known for its simplicity and readability. It's widely used in network automation to create custom scripts and integrate with various libraries and APIs.
+### Key Features of Python
 
-### Key Features
+| Feature              | Description                                                                                       |
+|----------------------|---------------------------------------------------------------------------------------------------|
+| Versatility          | Python can be used for almost any automation task, <br>from simple configuration changes to complex integrations. |
+| Rich Library Ecosystem | Python has numerous libraries for network automation,<br> such as Netmiko, Nornir, Paramiko, and Napalm. |
+| Customizability      | With Python, you have full control over the automation logic,<br> allowing for highly customized solutions. |
 
-- **Versatility**: Python can be used for almost any automation task, from simple configuration changes to complex integrations.
-- **Rich Library Ecosystem**: Python has numerous libraries for network automation, such as Netmiko, Nornir, Paramiko, and Napalm.
-- **Customizability**: With Python, you have full control over the automation logic, allowing for highly customized solutions.
+---
 
 ### Pros of Using Python
 
-- **Flexibility**: Python allows you to create highly tailored scripts that handle unique and complex requirements.
-- **Powerful Integrations**: Python can easily integrate with various APIs, databases, and other tools, making it ideal for comprehensive automation solutions.
-- **Learning Opportunities**: Learning Python provides valuable programming skills that extend beyond network automation.
+| Pros                 | Description                                                                                       |
+|----------------------|---------------------------------------------------------------------------------------------------|
+| Flexibility          | Python allows you to create highly tailored <br>scripts that handle unique and complex requirements.  |
+| Powerful Integrations | Python can easily integrate with various APIs,<br> databases, and other tools, making it ideal for comprehensive automation solutions. |
+| Learning Opportunities | Learning Python provides valuable programming skills <br>that extend beyond network automation.       |
+
+---
 
 ### Cons of Using Python
 
-- **Steeper Learning Curve**: Python requires a stronger understanding of programming concepts, which might be challenging for those new to coding.
-- **More Maintenance**: Custom scripts require regular updates and maintenance, especially as network environments evolve.
+| Cons                 | Description                                                                                       |
+|----------------------|---------------------------------------------------------------------------------------------------|
+| Steeper Learning Curve | Python requires a stronger understanding of programming concepts,<br> which might be challenging for those new to coding. |
+| More Maintenance     | Custom scripts require regular updates and maintenance,<br> especially as network environments evolve. |
+
 
 ## Choosing Between Ansible and Python
 
